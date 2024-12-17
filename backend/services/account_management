@@ -1,0 +1,16 @@
+from backend.core.data_structures.hash_table import HashTable
+
+class AccountManager:
+    def __init__(self):
+        self.accounts_db = HashTable()
+
+    def create_account(self, account_id, account_details):
+        self.accounts_db.insert(account_id, account_details)
+
+    def get_account_details(self, account_id):
+        return self.accounts_db.search(account_id)
+    
+account_manager = AccountManager()
+
+def get_account_details(account_id):
+    return account_manager.get_account_details(account_id)
